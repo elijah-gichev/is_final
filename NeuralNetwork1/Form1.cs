@@ -147,9 +147,17 @@ namespace NeuralNetwork1
                 var curNet = Net;
                 double f = await Task.Run(() => curNet.TrainOnDataSet(samples, epoches, acceptable_error, parallel));
                 groupBox1.Enabled = true;
-                //pictureBox1.Enabled = true;
 
-                tlgBot = new TLGBotik(curNet, new UpdateTLGMessages(UpdateTLGInfo), new AIMLService());
+
+                if(tlgBot == null)
+                {
+                    tlgBot = new TLGBotik(curNet, new UpdateTLGMessages(UpdateTLGInfo), new AIMLService());
+                } 
+                else
+                {
+                    tlgBot.SetNet(curNet);
+                }
+                
 
                 return f;
             }
