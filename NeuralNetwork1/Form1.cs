@@ -147,7 +147,7 @@ namespace NeuralNetwork1
                 var curNet = Net;
                 double f = await Task.Run(() => curNet.TrainOnDataSet(samples, epoches, acceptable_error, parallel));
                 groupBox1.Enabled = true;
-                pictureBox1.Enabled = true;
+                //pictureBox1.Enabled = true;
 
                 tlgBot = new TLGBotik(curNet, new UpdateTLGMessages(UpdateTLGInfo), new AIMLService());
 
@@ -233,7 +233,7 @@ namespace NeuralNetwork1
             label1.Text = "Выполняется обучение...";
             label1.ForeColor = Color.Red;
             groupBox1.Enabled = false;
-            pictureBox1.Enabled = false;
+           
             trainOneButton.Enabled = false;
         }
 
@@ -242,11 +242,32 @@ namespace NeuralNetwork1
             label1.Text = "Обучились";
             label1.ForeColor = Color.Green;
             groupBox1.Enabled = true;
-            pictureBox1.Enabled = true;
+          
             trainOneButton.Enabled = true;
         }
 
         private void AIMLInput_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        // сохранить
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Net.saveWeights();
+            label1.Text = "Сохранено";
+            label1.ForeColor = Color.Green;
+        }
+
+        // загрузить
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            Net.loadWeights();
+            label1.Text = "Загружено";
+            label1.ForeColor = Color.Green;
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
         {
 
         }

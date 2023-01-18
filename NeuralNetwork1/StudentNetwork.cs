@@ -1,11 +1,18 @@
-﻿using System;
+﻿using Accord.Neuro;
+using Newtonsoft.Json;
+using System;
 using System.Diagnostics;
 using System.Linq;
+using System.Text;
+
+using System.IO;
 
 namespace NeuralNetwork1
 {
     public class StudentNetwork : BaseNetwork
     {
+        private string filename = "student_net_weights";
+
         // Входной взвешенный сигнал
         double[][] inputSignal;
         // Массив входных матриц весов
@@ -176,5 +183,18 @@ namespace NeuralNetwork1
         }
 
         private static double ActivateFunction(double x) => 1.0 / (Math.Exp(-x) + 1);
+
+        public override void saveWeights()
+        {
+            string fName = System.IO.Path.Combine(Environment.CurrentDirectory, filename);
+            File.WriteAllText(fName, JsonConvert.SerializeObject(weights, Formatting.Indented), Encoding.UTF8);
+        }
+
+        public override void loadWeights()
+        {
+            string fName = System.IO.Path.Combine(Environment.CurrentDirectory, filename);
+            var jsonRes = File.ReadAllText(fName);
+            weights = JsonConvert.DeserializeObject<double[][,]>(jsonRes);
+        }
     }
 }

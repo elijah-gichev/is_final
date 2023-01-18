@@ -91,7 +91,7 @@ namespace NeuralNetwork1
                     case FigureType.Rewindf: talkabout = "rewindf"; break;
                     case FigureType.Rewindb: talkabout = "rewindb"; break;
                     case FigureType.Mix: talkabout = "mix"; break;
-                    default: botik.SendTextMessageAsync(message.Chat.Id, "Я такого не знаю!"); break;
+                    default: await botik.SendTextMessageAsync(message.Chat.Id, "Я такого не знаю!"); break;
                 }
 
                 string messageText = "Говорим о " + talkabout;
@@ -131,7 +131,7 @@ namespace NeuralNetwork1
                 string str = aiml.Talk(chatId, username, messageText);
 
                 // Echo received message text
-                botClient.SendTextMessageAsync(
+                await botClient.SendTextMessageAsync(
                     chatId: chatId,
                     text: str,
                     cancellationToken: cancellationToken);

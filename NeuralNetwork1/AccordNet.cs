@@ -1,13 +1,20 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using Accord.MachineLearning.Boosting;
+using System.Text;
 using Accord.Neuro;
 using Accord.Neuro.Learning;
+using Newtonsoft.Json;
+using Accord.Statistics.Kernels;
 
 namespace NeuralNetwork1
 {
     class AccordNet : BaseNetwork
     {
+        private string filename = "accord_net_weights";
+
         /// <summary>
         /// Реализация нейронной сети из Accord.NET
         /// </summary>
@@ -108,6 +115,16 @@ namespace NeuralNetwork1
         protected override double[] Compute(double[] input)
         {
             return network.Compute(input);
+        }
+
+        public override void saveWeights()
+        {
+            network.Save(filename);
+        }
+
+        public override void loadWeights()
+        {
+            network = (ActivationNetwork)ActivationNetwork.Load(filename);
         }
     }
 }

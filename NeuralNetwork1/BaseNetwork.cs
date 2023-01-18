@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Accord.MachineLearning.Boosting;
+using Newtonsoft.Json;
+using System;
+using System.Text;
 
 namespace NeuralNetwork1
 {
@@ -58,5 +61,9 @@ namespace NeuralNetwork1
         {
             TrainProgress?.Invoke(progress, error, time);
         }
+
+        public abstract void saveWeights();
+
+        public abstract void loadWeights();
     }
 }
