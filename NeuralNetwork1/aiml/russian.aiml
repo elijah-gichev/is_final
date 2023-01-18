@@ -1,0 +1,525 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?aiml version = "1.0.1" encoding = "UTF-8"?>
+
+<aiml>
+  <category>
+    <pattern>ПРИВЕТ</pattern>
+    <template>
+      <random>
+        <li>Привет</li>
+        <li>Доброго времени суток</li>
+        <li>Здравствуйте</li>
+        <li>Приветики</li>
+      </random>
+    </template>
+  </category>
+
+  <category>
+    <pattern>ЗДРАВСТВУЙ</pattern>
+    <template>
+      <srai>ПРИВЕТ</srai>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>ДОБРОГО ВРЕМЕНИ СУТОК</pattern>
+    <template>
+      <srai>ПРИВЕТ</srai>
+    </template>
+  </category>
+
+  <category>
+    <pattern>ПРИВЕТИКИ</pattern>
+    <template>
+      <srai>ПРИВЕТ</srai>
+    </template>
+  </category>
+
+  <category>
+    <pattern>ЗДРАВСТВУЙТЕ</pattern>
+    <template>
+      <srai>ПРИВЕТ</srai>
+    </template>
+  </category>
+
+  <category>
+    <pattern>ХАЙ</pattern>
+    <template>
+      <srai>ПРИВЕТ</srai>
+    </template>
+  </category>
+
+  <category>
+    <pattern>ХЭЛЛОУ</pattern>
+    <template>
+      <srai>ПРИВЕТ</srai>
+    </template>
+  </category>
+
+  <category>
+    <pattern>ПРИВЕТСТВУЮ</pattern>
+    <template>
+      <srai>ПРИВЕТ</srai>
+    </template>
+  </category>
+		
+  <category>
+    <pattern>МЕНЯ ЗОВУТ *</pattern>
+    <template>
+      <random>
+        <li>
+          Будем знакомы, <set name = "username"><star/></set>.
+        </li>
+        <li>
+          Привет, <set name = "username"><star/></set>, приятно познакомиться!
+        </li>
+        <li>
+          Привет, <set name = "username"><star/></set>!
+        </li>
+		<li>
+          Привет, <set name = "username"><star/></set>, а я бот распознаватель!
+        </li>
+      </random>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>Я *</pattern>
+    <template>
+     <random>
+        <li>
+          Будем знакомы, <set name = "username"><star/></set>.
+        </li>
+        <li>
+          Привет, <set name = "username"><star/></set>, приятно познакомиться!
+        </li>
+        <li>
+          Привет, <set name = "username"><star/></set>!
+        </li>
+		<li>
+          Привет, <set name = "username"><star/></set>, а я бот распознаватель!
+        </li>
+      </random>
+    </template>
+  </category>
+
+  <category>
+    <pattern>МОЕ ИМЯ *</pattern>
+    <template>
+     <random>
+        <li>
+          Будем знакомы, <set name = "username"><star/></set>.
+        </li>
+        <li>
+          Привет, <set name = "username"><star/></set>, приятно познакомиться! А я ботик риспознаватель.
+        </li>
+        <li>
+          Привет, <set name = "username"><star/></set>! А я ботик распозновашка.
+        </li>
+		<li>
+          Привет, <set name = "username"><star/></set>, а я бот распознаватель!
+        </li>
+      </random>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>ПОКА</pattern>
+    <template>
+      <random>
+        <li>
+          До связи, <get name = "username"/>.
+        </li>
+        <li>
+          Пока, <get name = "username"/>.
+        </li>
+        <li>
+          Буду ждать, <get name = "username"/>!
+        </li>
+      </random>
+    </template>
+  </category>
+
+  <category>
+    <pattern>ПРОЩАЙ</pattern>
+    <template>
+      <srai>ПОКА</srai>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>ДО СВЯЗИ</pattern>
+    <template>
+      <srai>ПОКА</srai>
+    </template>
+  </category>
+
+  <category>
+    <pattern>ДО СВИДАНИЯ</pattern>
+    <template>
+      <srai>ПОКА</srai>
+    </template>
+  </category>
+
+
+  <category>
+    <pattern>КТО ТЫ</pattern>
+    <template>
+      <random>
+        <li>Я – ботик распознаватель значков медиаплеера.</li>
+        <li>Ботик распознаватель на шарпике.</li>
+      </random>
+    </template>
+  </category>
+
+  <category>
+    <pattern>КТО ТЫ?</pattern>
+    <template>
+      <srai>КТО ТЫ</srai>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>РАССКАЖИ О СЕБЕ</pattern>
+    <template>
+      <srai>КТО ТЫ</srai>
+    </template>
+  </category>
+
+  <category>
+    <pattern>ТЫ КТО</pattern>
+    <template>
+      <srai>КТО ТЫ</srai>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>ТЫ КТО?</pattern>
+    <template>
+      <srai>КТО ТЫ</srai>
+    </template>
+  </category>
+
+  <category>
+    <pattern>КАК ДЕЛА</pattern>
+    <template>
+      <random>
+        <li>Скучно</li>
+        <li>Хорошо</li>
+        <li>Отлично</li>
+        <li>Явно лучше, чем у студента</li>
+        <li>Да нормально</li>
+      </random>
+    </template>
+  </category>
+  
+    
+  <category>
+    <pattern>КАК ДЕЛА?</pattern>
+    <template>
+      <srai>КАК ДЕЛА</srai>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>КАК ДЕЛИШКИ</pattern>
+    <template>
+      <srai>КАК ДЕЛА</srai>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>КАК ДЕЛИШКИ?</pattern>
+    <template>
+      <srai>КАК ДЕЛА</srai>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>КАК ЖИЗНЬ</pattern>
+    <template>
+      <srai>КАК ДЕЛА</srai>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>КАК ЖИЗНЬ?</pattern>
+    <template>
+      <srai>КАК ДЕЛА</srai>
+    </template>
+  </category>
+
+  <category>
+    <pattern>ДАВАЙ ПОГОВОРИМ О *</pattern>
+    <template>
+	    <random>
+		<li>
+          Окей, давай поболтаем о <set name="topic"> <star/></set>
+        </li>   
+		<li>
+          Хорошо, давай  поболтаем о <set name="topic"> <star/></set>
+        </li>  
+		<li>
+          Окей, давай поговорим о <set name="topic"> <star/></set>
+        </li>  
+		<li>
+          Хорошо, давай поговорим о <set name="topic"> <star/></set>
+        </li> 
+		</random>
+    </template>
+  </category>
+  
+    
+  <category>
+    <pattern>ПОГОВОРИМ О * </pattern>
+    <template>
+      <random>
+		<li>
+          Окей, давай поболтаем о <set name="topic"> <star/></set>
+        </li>   
+		<li>
+          Хорошо, давай  поболтаем о <set name="topic"> <star/></set>
+        </li>  
+		<li>
+          Окей, давай поговорим о <set name="topic"> <star/></set>
+        </li>  
+		<li>
+          Хорошо, давай поговорим о <set name="topic"> <star/></set>
+        </li> 
+		</random>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>РАССКАЖИ О * </pattern>
+    <template>
+       <random>
+		<li>
+          Окей, давай поболтаем о <set name="topic"> <star/></set>
+        </li>   
+		<li>
+          Хорошо, давай  поболтаем о <set name="topic"> <star/></set>
+        </li>  
+		<li>
+          Окей, давай поговорим о <set name="topic"> <star/></set>
+        </li>  
+		<li>
+          Хорошо, давай поговорим о <set name="topic"> <star/></set>
+        </li> 
+		</random>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>РАССКАЖИ МНЕ О * </pattern>
+    <template>
+       <random>
+		<li>
+          Окей, давай поболтаем о <set name="topic"> <star/></set>
+        </li>   
+		<li>
+          Хорошо, давай  поболтаем о <set name="topic"> <star/></set>
+        </li>  
+		<li>
+          Окей, давай поговорим о <set name="topic"> <star/></set>
+        </li>  
+		<li>
+          Хорошо, давай поговорим о <set name="topic"> <star/></set>
+        </li> 
+		</random>
+    </template>
+  </category>
+	
+ <topic name="play">
+    <category>
+      <pattern>ДЛЯ ЧЕГО ЭТА КНОПКА</pattern>
+      <template>
+        Она отвечает за начало воспроизведения.
+      </template>
+    </category>
+
+    <category>
+      <pattern>О ЧЕМ МЫ ГОВОРИМ</pattern>
+      <template>
+        О кнопке play конечно же.
+      </template>
+    </category>
+ </topic>
+	
+<topic name="pause">
+    <category>
+      <pattern>ДЛЯ ЧЕГО ЭТА КНОПКА</pattern>
+      <template>
+        Она отвечает за паузу в воспроизведении.
+      </template>
+    </category>
+
+    <category>
+      <pattern>О ЧЕМ МЫ ГОВОРИМ</pattern>
+      <template>
+        О кнопке pause конечно же.
+      </template>
+    </category>
+ </topic>
+	
+	<topic name="repeat">
+    <category>
+      <pattern>ДЛЯ ЧЕГО ЭТА КНОПКА</pattern>
+      <template>
+        Она отвечает за повторное воспроизведение.
+      </template>
+    </category>
+
+    <category>
+      <pattern>О ЧЕМ МЫ ГОВОРИМ</pattern>
+      <template>
+        О кнопке repeat конечно же.
+      </template>
+    </category>
+ </topic>
+
+<topic name="next">
+    <category>
+      <pattern>ДЛЯ ЧЕГО ЭТА КНОПКА</pattern>
+      <template>
+        Она отвечает за переключение на следующий трек.
+      </template>
+    </category>
+
+    <category>
+      <pattern>О ЧЕМ МЫ ГОВОРИМ</pattern>
+      <template>
+        О кнопке next конечно же.
+      </template>
+    </category>
+ </topic>
+
+<topic name="previous">
+    <category>
+      <pattern>ДЛЯ ЧЕГО ЭТА КНОПКА</pattern>
+      <template>
+        Она отвечает за перключение на предыдущий трек.
+      </template>
+    </category>
+
+    <category>
+      <pattern>О ЧЕМ МЫ ГОВОРИМ</pattern>
+      <template>
+        О кнопке previous конечно же.
+      </template>
+    </category>
+ </topic>
+
+<topic name="louder">
+    <category>
+      <pattern>ДЛЯ ЧЕГО ЭТА КНОПКА</pattern>
+      <template>
+        Она отвечает за повышение громкости.
+      </template>
+    </category>
+
+    <category>
+      <pattern>О ЧЕМ МЫ ГОВОРИМ</pattern>
+      <template>
+        О кнопке louder конечно же.
+      </template>
+    </category>
+ </topic>
+
+<topic name="quieter">
+    <category>
+      <pattern>ДЛЯ ЧЕГО ЭТА КНОПКА</pattern>
+      <template>
+        Она отвечает за понижение громкости.
+      </template>
+    </category>
+
+    <category>
+      <pattern>О ЧЕМ МЫ ГОВОРИМ</pattern>
+      <template>
+        О кнопке quieter конечно же.
+      </template>
+    </category>
+ </topic>
+
+<topic name="rewindf">
+    <category>
+      <pattern>ДЛЯ ЧЕГО ЭТА КНОПКА</pattern>
+      <template>
+        Она отвечает за перемотку вперед.
+      </template>
+    </category>
+
+    <category>
+      <pattern>О ЧЕМ МЫ ГОВОРИМ</pattern>
+      <template>
+        О кнопке rewindf конечно же.
+      </template>
+    </category>
+ </topic>
+
+<topic name="rewindb">
+    <category>
+      <pattern>ДЛЯ ЧЕГО ЭТА КНОПКА</pattern>
+      <template>
+        Она отвечает за перемотку назад.
+      </template>
+    </category>
+
+    <category>
+      <pattern>О ЧЕМ МЫ ГОВОРИМ</pattern>
+      <template>
+        О кнопке rewindb конечно же.
+      </template>
+    </category>
+ </topic>
+
+<topic name="mix">
+    <category>
+      <pattern>ДЛЯ ЧЕГО ЭТА КНОПКА</pattern>
+      <template>
+        Она отвечает за случайный порядок воспроизведения.
+      </template>
+    </category>
+
+    <category>
+      <pattern>О ЧЕМ МЫ ГОВОРИМ</pattern>
+      <template>
+        О кнопке mix конечно же.
+      </template>
+    </category>
+ </topic>
+	
+	<category>
+    <pattern>ЧТО ТЫ УМЕЕШЬ</pattern>
+    <template>
+      <random>
+        <li>
+          Я умею распознавать эти символы
+        </li>
+        <li>
+          Я умею распознавать сиволы медиаплеера
+        </li>
+        <li>
+          Вот это могу распознать
+        </li>
+      </random>
+    </template>
+  </category>
+  <category>
+    <pattern>ГОВОРИМ О * </pattern>
+    <template>
+    Это <set name="topic"><star/></set>
+    </template>
+  </category>
+  <category>
+    <pattern>*</pattern>
+    <template>
+      <random>
+        <li>Не понял тебя</li>
+        <li>Не понял твой вопрос</li>
+        <li>Я не могу ответить на такой вопрос</li>
+      </random>
+    </template>
+  </category>
+</aiml>

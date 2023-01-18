@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ACQUAINTANCE -->
+
+<!-- ПРИВЕТСТВИЕ -->
+<aiml>
+  <category>
+    <pattern>Привет</pattern>
+    <template>
+      <srai>Привет</srai>
+    </template>
+  </category>
+  <category>
+    <pattern>Добырй день</pattern>
+    <template>
+      <srai>Привет</srai>
+    </template>
+  </category>
+  <category>
+    <pattern>Здравствуй</pattern>
+    <template>
+      <srai>Привет</srai>
+    </template>
+  </category>
+	<category>
+	    <pattern>Привет</pattern>
+        <template>
+		    <random>
+		    <li>Привет, <get name="user-name" /></li>
+		    <li>Доброго времени суток, <get name="user-name" /></li>
+		    </random>
+         
+Чтобы узнать обо мне немного больше, просто напиши "расскажи о себе"
+	    </template>
+    </category>
+  <category>
+    <pattern>Салам</pattern>
+    <template>
+      Ас-саляму алейкум, брат
+
+Чтобы узнать обо мне немного больше, просто напиши "расскажи о себе"
+    </template>
+  </category>
+  <!-- ОБЩЕЕ -->
+    <category>
+	    <pattern>Как дела</pattern>
+        <template>
+		    <random>
+		    <li>Мне сегодня очень грустно...</li>
+		    <li>Отлично. Как у тебя?</li>
+		    </random>
+	    </template>
+    </category>
+  
+  <category>
+    <pattern>Что ты умеешь</pattern>
+    <template>
+      <srai>расскажи о себе</srai>
+    </template>
+  </category>
+
+  <category>
+    <pattern>расскажи о себе</pattern>
+    <template>
+      <get name="user-name" />, меня зовут BobyteBot, я умею распознавать символы действий с медиа-плеером(play, pause, repeat, next, previous, louder, quieter, rewindf, rewindb, mix) по фотографии и смешно шутить :)
+
+Если хочешь узнать о каком-либо из символов подробнее, то напиши "Расскажи о *".
+
+Для того, чтобы я рассказал тебе шутку, то просто попроси об этом, написав "Пошути".
+
+И, самое главное, чтобы я распознал сивол по фотографии, то просто отправь мне её
+    </template>
+  </category>
+
+  <category>
+    <pattern>пошути</pattern>
+    <template>
+      <srai>шутка</srai>
+    </template>
+  </category>
+  <category>
+    <pattern>анекдот</pattern>
+    <template>
+      <srai>шутка</srai>
+    </template>
+  </category>
+  
+  <category>
+    <category>
+      <pattern>расскажи анекдот</pattern>
+      <template>
+        <srai>шутка</srai>
+      </template>
+    </category>
+    
+    <pattern>шутка</pattern>
+    <template>
+      <random>
+        <li>
+          В семье скелетов родился сын, назвали Костян.
+        </li>
+        <li>
+          У меня нет настроения.
+        </li>
+        <li>
+          Кто-то говорит "микрозелень", но я предпочитаю называть это "зарплата"
+        </li>
+        <li>
+          Можно работать на бэке за 200к, а можно на фронте за 200к, но есть один нюанс…
+        </li>
+        <li>
+          На ночь программист ставит два стакана
+Один полный, на случай если захочет пить
+Другой пустой, на случай если не захочет
+        </li>
+      </random>
+    </template>
+  </category>
+
+  <!-- РАСПОЗНАВАНИЕ ОБРАЗОВ -->
+	
+	<category>
+    <pattern>_ расскажи о *</pattern>
+    <template>
+        <srai>расскажи о <star/></srai>
+    </template>
+  </category>
+  
+	<category>
+    <pattern>расскажи о *</pattern>
+    <template>
+		<srai><star/></srai>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>расскажи еще</pattern>
+    <template>
+      <srai>
+        еще
+      </srai>
+    </template>
+  </category>
+
+  <category>
+    <pattern>а о чем мы разговариваем</pattern>
+    <template>
+      <srai>
+        о чем мы
+      </srai>
+    </template>
+  </category>
+  <category>
+    <pattern>тема</pattern>
+    <template>
+      <srai>
+        о чем мы
+      </srai>
+    </template>
+  </category>
+
+  <topic name = "образы">
+	<category>
+    <pattern>еще</pattern>
+    <template>
+      <get name="user-name" />, я не знаю, что еще могу рассказать о <get name="theme"/>, поэтому расскажу тебе интересный факт о медиаплеере:
+      
+<random>
+      <li>Медиаплеер - это программа, предназначенная для воспроизведения файлов мультимедиа-содержимого[</li>
+      <li>Большинство современных операционных систем по умолчанию содержат в своём составе медиаплееры: например,Windows — Windows Media Player, Mac OS X — QuickTime Player (для воспроизведения видео в формате QuickTime) и iTunes (для некоторых других форматов), Linux — Amarok, Rhythmbox или иные (в зависимости от дистрибутива).</li>
+      <li>Одна разновидность медиаплееров предназначена для воспроизведения только аудио- или же видеофайлов, и которые называются, соответственно, — аудиоплеер и видеоплеер.</li>
+    </random>
+    </template>
+  </category>
+
+    <category>
+      <pattern>О чем мы</pattern>
+      <template>
+        О символе <get name="theme"/>
+      </template>
+    </category>
+    </topic>
+  
+ 
+	<category>
+    <pattern>Play</pattern>
+    <template>
+      <think><set name="theme">Play</set><set name = "topic">образы</set></think>Play служит для включения музыки в медиаплеере
+    </template>
+  </category>
+		
+<category>
+    <pattern>Pause</pattern>
+  <template>
+      <think><set name="theme">Pause</set><set name = "topic">образы</set></think>Pause служит для остановки проигрывания музыки
+  </template>
+</category>
+		
+<category>
+    <pattern>Repeat</pattern>
+  <template>
+    <think>
+      <set name="theme">Repeat</set>
+      <set name = "topic">образы</set>
+    </think>Repeat служит для включения режима повтора песни
+  </template>
+</category>
+		
+<category>
+    <pattern>Next</pattern>
+  <template>
+    <think>
+      <set name="theme">Next</set>
+      <set name = "topic">образы</set>
+    </think>Next служит для включения следующего трека
+  </template>
+</category>
+		
+<category>
+    <pattern>Previous</pattern>
+  <template>
+    <think>
+      <set name="theme">Previous</set>
+      <set name = "topic">образы</set>
+    </think>Previous служит для включения предыдущего трека
+  </template>
+</category>
+		
+	<category>
+    <pattern>Louder</pattern>
+    <template>
+      <think>
+        <set name="theme">Louder</set>
+        <set name = "topic">образы</set>
+      </think>Louder служит для увеличения громкости
+    </template>
+  </category>
+			
+  <category>
+    <pattern>Quieter</pattern>
+    <template>
+      <think>
+        <set name="theme">Quieter</set>
+        <set name = "topic">образы</set>
+      </think>Quieter служит для уменьшения громкости
+    </template>
+  </category>
+		
+	<category>
+    <pattern>Rewindf</pattern>
+    <template>
+      <think>
+        <set name="theme">Rewindf</set>
+        <set name = "topic">образы</set>
+      </think>Rewindf служит для перемотки трека вперед
+    </template>
+  </category>
+  
+  <category>
+    <pattern>Rewindb</pattern>
+    <template>
+      <think>
+        <set name="theme">Rewindb</set>
+        <set name = "topic">образы</set>
+      </think>Rewindb служит для перемотки трека назад
+    </template>
+  </category>
+  
+  <category>
+    <pattern>Mix</pattern>
+    <template>
+      <think>
+        <set name="theme">Mix</set>
+        <set name = "topic">образы</set>
+      </think>Mix служит проигрывания плейлиста в рандомном порядке
+    </template>
+  </category>
+	
+		
+		<!-- Загатовка -->
+  <category>
+    <pattern>_ меня зовут *</pattern>
+    <template>
+        <srai>меня зовут <star/></srai>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>меня зовут *</pattern>
+    <template>
+      <random>
+        <li>Здравствуйте, <set name="user-name"><star /></set>!
+        </li>
+        <li>Добро пожаловать, <set name="user-name"><star /></set>!
+        </li>
+      </random>
+    </template>
+  </category>
+
+  <category>
+    <pattern>Кря *</pattern>
+    <template>
+      <srai>Кря</srai>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>_ Кря *</pattern>
+    <template>
+      <srai>Кря</srai>
+    </template>
+  </category>
+
+  <category>
+    <pattern>_ Кря</pattern>
+    <template>
+      <srai>Кря</srai>
+    </template>
+  </category>
+
+  <category>
+    <pattern>Кря</pattern>
+    <template>
+      <random>
+        <li>Кря</li>
+        <li>Кря Кря</li>
+        <li>Кря Кря Кря</li>
+        <li>Кря!</li>
+        <li>Кря Кря!</li>
+        <li>Кря Кря Кря!</li>
+        <li>Кря?</li>
+        <li>Кря Кря?</li>
+        <li>Кря Кря Кря?</li>
+        <li>Кря, <get name="user-name" /></li>
+        <li>Кря Кря, <get name="user-name" /> </li>
+        <li>Кря Кря Кря, <get name="user-name" /> </li>
+        <li>Кря, <get name="user-name" />!</li>
+        <li>Кря Кря, <get name="user-name" />!</li>
+        <li>Кря Кря Кря, <get name="user-name" />!</li>
+        <li>Кря, <get name="user-name" />?</li>
+        <li>Кря Кря, <get name="user-name" />?</li>
+        <li>Кря Кря Кря, <get name="user-name" />?</li>
+      </random>
+    </template>
+  </category>
+  
+  <category>
+    <pattern>Аудио</pattern>
+    <template>Жаль, я не умею слушать</template>
+  </category>
+  <category>
+    <pattern>Видео</pattern>
+    <template>Спасибо, но, кажется, у меня сломалась кнопка запуска</template>
+  </category>
+  
+  <category>
+    <pattern>*</pattern>
+    <template>Я такое не знаю, <get name="user-name"/></template>
+  </category>
+</aiml>
