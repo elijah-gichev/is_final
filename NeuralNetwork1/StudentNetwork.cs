@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 
 using System.IO;
+using System.Windows.Forms;
 
 namespace NeuralNetwork1
 {
@@ -193,8 +194,16 @@ namespace NeuralNetwork1
         public override void loadWeights()
         {
             string fName = System.IO.Path.Combine(Environment.CurrentDirectory, filename);
-            var jsonRes = File.ReadAllText(fName);
-            weights = JsonConvert.DeserializeObject<double[][,]>(jsonRes);
+            
+            if (!File.Exists(fName))
+            {
+                MessageBox.Show("Нет файла для загрузки", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                var jsonRes = File.ReadAllText(fName);
+                weights = JsonConvert.DeserializeObject<double[][,]>(jsonRes);
+            }
         }
     }
 }

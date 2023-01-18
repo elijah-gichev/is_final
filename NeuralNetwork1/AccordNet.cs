@@ -8,6 +8,7 @@ using Accord.Neuro;
 using Accord.Neuro.Learning;
 using Newtonsoft.Json;
 using Accord.Statistics.Kernels;
+using System.Windows.Forms;
 
 namespace NeuralNetwork1
 {
@@ -124,7 +125,13 @@ namespace NeuralNetwork1
 
         public override void loadWeights()
         {
-            network = (ActivationNetwork)ActivationNetwork.Load(filename);
+            if (!File.Exists(filename))
+            {
+                MessageBox.Show("Нет файла для загрузки", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } else
+            {
+                network = (ActivationNetwork)ActivationNetwork.Load(filename);
+            }
         }
     }
 }
